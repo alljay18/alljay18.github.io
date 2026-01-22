@@ -1,269 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arjay Badion Omega | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjay Omega | Top-Tier Virtual Assistant</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/feather-icons"></script>
 
-  <style>
-    :root {
-      --primary: #4f46e5;
-      --secondary: #22c55e;
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-    }
+<style>
+:root{
+--bg:#020617;
+--bg-light:#f8fafc;
+--card:#0f172a;
+--card-light:#ffffff;
+--primary:#4f46e5;
+--accent:#22c55e;
+--text:#e5e7eb;
+--text-light:#020617;
+--muted:#94a3b8;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:.3s;
+}
+.light{
+background:var(--bg-light);
+color:var(--text-light);
+}
+a{text-decoration:none;color:inherit}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #020617);
-      color: var(--text);
-    }
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+backdrop-filter:blur(12px);
+background:rgba(2,6,23,.75);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+.light nav{background:rgba(255,255,255,.85)}
+nav a{margin-left:20px;font-size:.9rem;color:var(--muted)}
+nav a:hover{color:var(--accent)}
+.toggle{cursor:pointer}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+/* CONTAINER */
+.container{
+max-width:1200px;
+margin:auto;
+padding:120px 20px 60px;
+}
 
-    /* HERO */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
+/* HERO */
+.hero{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:40px;
+align-items:center;
+}
+.hero img{
+width:220px;height:220px;border-radius:50%;
+border:4px solid var(--accent);object-fit:cover;
+}
+.hero h1{font-size:3rem;margin:0}
+.hero span{color:var(--accent)}
+.hero p{color:var(--muted);margin:6px 0}
 
-    .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--secondary);
-    }
+/* BUTTONS */
+.btn{
+display:inline-flex;align-items:center;gap:8px;
+padding:12px 22px;border-radius:14px;
+font-weight:600;margin-right:10px;
+}
+.primary{background:var(--accent);color:#022c22}
+.outline{border:2px solid var(--accent);color:var(--accent)}
 
-    .hero-text h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+/* SECTION */
+section{margin-top:100px}
+h2{
+font-size:2rem;
+border-left:6px solid var(--primary);
+padding-left:15px;
+}
 
-    .hero-text span {
-      color: var(--secondary);
-    }
+/* CARD */
+.card{
+background:linear-gradient(145deg,#020617,#0f172a);
+padding:30px;border-radius:20px;
+box-shadow:0 25px 50px rgba(0,0,0,.45);
+}
+.light .card{background:#fff}
 
-    .hero-text p {
-      margin: 6px 0;
-      color: var(--muted);
-    }
+/* ANIMATION */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:.6s;
+}
+.reveal.show{
+opacity:1;
+transform:none;
+}
 
-    .badge {
-      display: inline-block;
-      background: rgba(34,197,94,0.15);
-      color: var(--secondary);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      margin-top: 10px;
-    }
+/* SKILLS */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+}
+.skill{
+background:rgba(255,255,255,.05);
+padding:14px;border-radius:14px;
+display:flex;gap:10px;align-items:center;
+}
 
-    /* SECTION */
-    section {
-      margin-bottom: 50px;
-    }
+/* METRICS */
+.metrics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+.metric h3{font-size:2.5rem;color:var(--accent);margin:0}
 
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      border-left: 5px solid var(--primary);
-      padding-left: 15px;
-    }
+/* TESTIMONIAL */
+.testimonial{
+font-style:italic;color:var(--muted);
+}
 
-    /* CARD */
-    .card {
-      background: linear-gradient(145deg, #020617, #111827);
-      border-radius: 16px;
-      padding: 25px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
+/* FLOATING BUTTON */
+.float-btn{
+position:fixed;
+bottom:30px;right:30px;
+background:var(--accent);
+color:#022c22;
+padding:14px 18px;
+border-radius:999px;
+box-shadow:0 15px 30px rgba(0,0,0,.4);
+}
 
-    /* SKILLS */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 15px;
-    }
+/* FOOTER */
+footer{text-align:center;color:var(--muted);margin-top:80px}
 
-    .skill {
-      background: rgba(255,255,255,0.04);
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-size: 0.95rem;
-    }
-
-    /* TOOLS */
-    .tools span {
-      display: inline-block;
-      background: rgba(79,70,229,0.15);
-      color: #c7d2fe;
-      padding: 8px 14px;
-      border-radius: 999px;
-      margin: 6px;
-      font-size: 0.85rem;
-    }
-
-    /* EXPERIENCE */
-    .job {
-      margin-bottom: 30px;
-    }
-
-    .job h3 {
-      margin-bottom: 5px;
-    }
-
-    .job small {
-      color: var(--muted);
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      color: var(--muted);
-      margin-top: 60px;
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: var(--secondary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+/* MOBILE */
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;text-align:center}
+nav{padding:15px 20px}
+}
+</style>
 </head>
+
 <body>
+
+<nav>
+<strong>Arjay Omega</strong>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+<span class="toggle" onclick="toggleMode()">🌓</span>
+</div>
+</nav>
+
+<a href="mailto:omegaarjay321@yahoo.com" class="float-btn">✉ Hire Me</a>
 
 <div class="container">
 
-  <!-- HERO -->
-  <div class="hero">
-    <img src="profile.jpg" alt="Arjay Badion Omega">
-    <div class="hero-text">
-      <h1>Arjay <span>Badion Omega</span></h1>
-      <p>Virtual Assistant | Administrative & Data Support</p>
-      <p>📍 Philippines • Available for U.S Time Zones</p>
-      <p>📧 <a href="mailto:omegaarjay321@yahoo.com">omegaarjay321@yahoo.com</a></p>
-      <div class="badge">Open to Remote Work</div>
-    </div>
-  </div>
+<!-- HERO -->
+<div class="hero reveal" id="about">
+<img src="profile.jpg">
+<div>
+<h1>Top-Tier <span>Virtual Assistant</span></h1>
+<p>Administrative • Data Support • QA-Driven</p>
+<p>🇵🇭 Philippines • 🇺🇸 U.S Time Zones</p>
 
-  <!-- SUMMARY -->
-  <section>
-    <h2>Professional Summary</h2>
-    <div class="card">
-      Structured and detail-oriented Administrative & Data Support professional with experience in government operations and freelance online projects. Strong background in data entry, data verification, document management, and SOP compliance.
-      <br><br>
-      Bachelor of Science in Information Technology graduate with strong computer skills, QA habits, and attention to detail. Reliable, deadline-driven, and comfortable supporting U.S.-based remote teams.
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section>
-    <h2>Core Skills</h2>
-    <div class="skills">
-      <div class="skill">Administrative & Operational Support</div>
-      <div class="skill">Data Entry & Verification</div>
-      <div class="skill">SOP Compliance & QA</div>
-      <div class="skill">File & Document Management</div>
-      <div class="skill">Inbox & Calendar Management</div>
-      <div class="skill">Task & Deadline Tracking</div>
-      <div class="skill">Web Research & Data Collection</div>
-      <div class="skill">Confidential Information Handling</div>
-      <div class="skill">Time Management & Accuracy</div>
-    </div>
-  </section>
-
-  <!-- TOOLS -->
-  <section>
-    <h2>Tools & Platforms</h2>
-    <div class="card tools">
-      <span>MS Word</span><span>Excel</span><span>Google Workspace</span>
-      <span>Trello</span><span>Notion</span><span>Slack</span>
-      <span>Zoom</span><span>Adobe Photoshop</span><span>Filmora</span>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section>
-    <h2>Experience</h2>
-    <div class="card">
-
-      <div class="job">
-        <h3>Ticket Application Specialist (Freelance)</h3>
-        <small>Dec 2025 – Jan 2026</small>
-        <ul>
-          <li>High-volume ticket application processing and data entry</li>
-          <li>Managed records using Google Sheets with high accuracy</li>
-          <li>Followed SOPs and security protocols</li>
-          <li>Met daily quotas while maintaining quality standards</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h3>Administrative Clerk – Philippine Statistics Authority</h3>
-        <small>Jan 2021 – Mar 2023</small>
-        <ul>
-          <li>High-volume data entry and document validation</li>
-          <li>Maintained digital & physical filing systems</li>
-          <li>Client assistance with confidentiality</li>
-          <li>Supported trackers and reporting tasks</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h3>PhilSys Screener – Philippine Statistics Authority</h3>
-        <small>Dec 2019 – Dec 2020</small>
-        <ul>
-          <li>Verified applicant identities and registration data</li>
-          <li>Guided applicants with system-based forms</li>
-          <li>Followed data privacy and SOP guidelines</li>
-          <li>Worked in quota-driven environments</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section>
-    <h2>Education</h2>
-    <div class="card">
-      Bachelor of Science in Information Technology
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Arjay Badion Omega • Built with GitHub Pages
-  </footer>
-
+<div style="margin-top:20px">
+<a href="resume.pdf" class="btn primary" download>
+<i data-feather="download"></i> Resume
+</a>
+<a href="#contact" class="btn outline">
+<i data-feather="mail"></i> Hire Me
+</a>
 </div>
-</body>
-</html>
+</div>
+</div>
+
+<!-- METRICS -->
+<section class="reveal">
+<div class="metrics">
+<div class="metric"><h3>10K+</h3><p>Records Processed</p></div>
+<div class="metric"><h3>99%</h3><p>Accuracy Rate</p></div>
+<div class="metric"><h3>3+ yrs</h3><p>Govt Experience</p></div>
+<div class="metric"><
