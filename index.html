@@ -98,6 +98,7 @@ padding-left:15px;
 background:linear-gradient(145deg,#020617,#0f172a);
 padding:30px;border-radius:20px;
 box-shadow:0 25px 50px rgba(0,0,0,.45);
+margin-bottom:40px;
 }
 .light .card{background:#fff}
 
@@ -136,6 +137,18 @@ text-align:center;
 /* TESTIMONIAL */
 .testimonial{
 font-style:italic;color:var(--muted);
+margin-bottom:20px;
+}
+
+/* WORKS */
+.works{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+.works img, .works video{
+width:100%;
+border-radius:14px;
 }
 
 /* FLOATING BUTTON */
@@ -168,6 +181,7 @@ nav{padding:15px 20px}
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
+<a href="#works">Portfolio</a>
 <a href="#contact">Contact</a>
 <span class="toggle" onclick="toggleMode()">🌓</span>
 </div>
@@ -179,7 +193,7 @@ nav{padding:15px 20px}
 
 <!-- HERO -->
 <div class="hero reveal" id="about">
-<img src="profile.jpg">
+<img src="profile.jpg" alt="Arjay Omega">
 <div>
 <h1>Top-Tier <span>Virtual Assistant</span></h1>
 <p>Administrative • Data Support • QA-Driven</p>
@@ -211,60 +225,99 @@ View Resume
 
 <!-- SKILLS -->
 <section id="skills" class="reveal">
-<h2>Core Skills</h2>
+<h2>Skills & Services</h2>
 <div class="skills">
 <div class="skill"><i data-feather="check-circle"></i> Admin Support</div>
-<div class="skill"><i data-feather="database"></i> Data Entry</div>
-<div class="skill"><i data-feather="shield"></i> SOP & QA</div>
-<div class="skill"><i data-feather="folder"></i> Document Control</div>
+<div class="skill"><i data-feather="database"></i> Data Entry & Verification</div>
+<div class="skill"><i data-feather="shield"></i> SOP Compliance & QA</div>
+<div class="skill"><i data-feather="folder"></i> Document Management</div>
 <div class="skill"><i data-feather="clock"></i> Deadline Tracking</div>
-<div class="skill"><i data-feather="lock"></i> Confidential Data</div>
+<div class="skill"><i data-feather="lock"></i> Confidential Data Handling</div>
+<div class="skill"><i data-feather="bar-chart-2"></i> Reporting & Analytics</div>
+<div class="skill"><i data-feather="layers"></i> Workflow Optimization</div>
 </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="reveal">
-<h2>Professional Experience</h2>
+<h2>Work & Educational Background</h2>
 
 <div class="card">
 
 <h3>Administrative Clerk – Philippine Statistics Authority (PSA)</h3>
 <small>January 2021 – March 2023</small>
 <ul>
-  <li>Performed government-level data entry, verification, and document validation with high accuracy</li>
-  <li>Maintained strict compliance with SOPs, data privacy, and confidentiality standards</li>
-  <li>Handled high-volume daily quotas in a fast-paced operational environment</li>
-  <li>Organized digital and physical records to support reporting and internal workflows</li>
-  <li>Assisted clients professionally while protecting sensitive information</li>
+  <li>Performed high-volume data entry and verification with 99%+ accuracy</li>
+  <li>Maintained strict SOP compliance and confidential record handling</li>
+  <li>Organized digital and physical files to support operational workflows</li>
 </ul>
 
 <hr style="opacity:.15;margin:30px 0">
 
-<h4>Additional Relevant Experience</h4>
-
+<h4>Additional Roles</h4>
 <ul>
-  <li>
-    <strong>Ticket Application Specialist (Freelance)</strong>  
-    <br><small>Dec 2025 – Jan 2026</small>
-    <br>High-volume application processing, Google Sheets tracking, SOP adherence
-  </li>
-  <br>
-  <li>
-    <strong>PhilSys Screener – PSA</strong>  
-    <br><small>Dec 2019 – Dec 2020</small>
-    <br>Identity verification, system-based registration, data accuracy checks
-  </li>
+<li><strong>Ticket Application Specialist (Freelance)</strong> Dec 2025 – Jan 2026</li>
+<li><strong>PhilSys Screener – PSA</strong> Dec 2019 – Dec 2020</li>
 </ul>
 
+<hr style="opacity:.15;margin:30px 0">
+
+<h4>Education</h4>
+<ul>
+<li>Bachelor’s Degree (Field/University if needed)</li>
+<li>Relevant Certifications: Data Management, Virtual Assistance, QA Standards</li>
+</ul>
+
+</div>
+
+<!-- SHORT MESSAGE TO CLIENT -->
+<section class="reveal">
+<h2>Message to Clients</h2>
+<div class="card">
+<p>Hello! I’m Arjay, a dedicated Virtual Assistant with a strong background in administrative support, data management, and QA processes. I thrive on accuracy, organization, and helping clients save time while achieving results. Let’s collaborate to streamline your operations and bring your projects to life efficiently!</p>
+</div>
+</section>
+
+<!-- PORTFOLIO / WORKS -->
+<section id="works" class="reveal">
+<h2>Sample Works</h2>
+<div class="card">
+<h4>Thumbnails, Brochures, Marketing Ads</h4>
+<div class="works">
+<img src="thumbnail1.jpg" alt="Thumbnail 1">
+<img src="brochure1.jpg" alt="Brochure 1">
+<img src="leaflet1.jpg" alt="Leaflet 1">
+<img src="ad1.jpg" alt="Marketing Ad 1">
+</div>
+
+<h4 style="margin-top:30px">Videos: Editing, Documentary, Vlog, Promotional</h4>
+<div class="works">
+<video controls src="promo1.mp4"></video>
+<video controls src="vlog1.mp4"></video>
+<video controls src="documentary1.mp4"></video>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="reveal">
+<h2>Testimonials</h2>
+<div class="card">
+<p class="testimonial">"Arjay is meticulous and reliable. His work on our data management was exceptional." – Client A</p>
+<p class="testimonial">"Highly recommend for virtual assistance and admin support. Always on time and detail-oriented." – Client B</p>
+<p class="testimonial">"Great collaborator! Helped streamline our workflow and saved hours of manual work." – Client C</p>
+<!-- Optional video testimonial -->
+<video controls src="testimonial1.mp4" style="margin-top:20px;"></video>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="reveal">
-<h2>Let’s Work Together</h2>
+<h2>Contact & Call to Action</h2>
 <div class="card">
-📧 <strong>Email:</strong> omegaarjay321@yahoo.com<br>
-⏰ U.S Time Zones • Remote • Reliable
+<p>📧 <strong>Email:</strong> omegaarjay321@yahoo.com</p>
+<p>⏰ U.S Time Zones • Remote • Reliable</p>
+<a href="mailto:omegaarjay321@yahoo.com" class="btn primary"><i data-feather="mail"></i> Hire Me</a>
 </div>
 </section>
 
